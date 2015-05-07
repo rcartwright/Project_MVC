@@ -1,5 +1,5 @@
 <div class='page-header'>
-<h1>Products List</h1>
+<h1>Edit Product</h1>
 </div>
 
 <?php
@@ -43,7 +43,7 @@ $product->readOne();
         // read the product categories from the database
 
         $category = new CategoryModel($db);
-        $stmt = $category->read();
+        $stmt = $category->readAll();
 
         // put them in a select drop-down
         echo "<select class='form-control' name='category_id'>";

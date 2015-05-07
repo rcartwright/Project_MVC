@@ -65,7 +65,7 @@ if($_POST){
     // read the product categories from the database
 
     $category = new CategoryModel($db);
-    $stmt = $category->read();
+    $stmt = $category->readAll();
 
     // put them in a select drop-down
     echo "<select class='form-control' name='category_id'>";

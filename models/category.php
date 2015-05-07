@@ -18,7 +18,7 @@ public function __construct($db){
     }
 
     // used by select drop-down list
-    function read(){
+    function readAll(){
 
         //select all data
         $query = "SELECT id, name FROM " . $this->table_name . " ORDER BY name";
@@ -43,6 +43,30 @@ public function __construct($db){
 
     }
 
+    function create(){
+
+        // to get time-stamp for 'created' field
+        $this->getTimestamp();
+
+        //write query
+        $query = "INSERT INTO
+                    " . $this->table_name . "
+                SET
+                    name = ?, created = ?";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(1, $this->name);
+        $stmt->bindParam(2, $this->timestamp);
+
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 
 // delete the product
     function delete(){
@@ -58,6 +82,11 @@ public function __construct($db){
             return false;
         }
     }
+
+    function getTimestamp(){
+    date_default_timezone_set('Asia/Manila');
+    $this->timestamp = date('m-d-Y H:i:s');
+}
 
 }
 

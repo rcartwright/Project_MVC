@@ -8,7 +8,8 @@ $num = $stmt->rowCount();
 <div class='page-header'>
 <h1>Products List</h1>
 </div>
-
+<a href="create" class='btn btn-default'>Create Product</a>
+<p>&nbsp;</p>
 <?php
 
 // display the products if there are any
