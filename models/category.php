@@ -43,31 +43,6 @@ public function __construct($db){
 
     }
 
-    function update(){
-
-        $query = "UPDATE
-                " . $this->table_name . "
-            SET
-                name = :name,
-                created = :created,
-                modified = :modified,
-            WHERE
-                id = :id";
-
-        $stmt = $this->conn->prepare($query);
-
-        $stmt->bindParam(':name', $this->name);
-        $stmt->bindParam(':created', $this->created);
-        $stmt->bindParam(':modified', $this->modified);
-        $stmt->bindParam(':id', $this->id);
-
-        // execute the query
-        if($stmt->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
 
 // delete the product
     function delete(){

@@ -1,5 +1,5 @@
 <?php
-class Product extends BaseController {
+class Category extends BaseController {
 
 
 public function index()

@@ -1,20 +1,16 @@
 <?php
 
-$product = new ProductModel($db);
-$stmt = $product->readAll();
+$category = new CategoryModel($db);
+$stmt = $category->readAll();
 $num = $stmt->rowCount();
 
-// display the products if there are any
+// display the categorys if there are any
 if($num>0){
 
-    $category = new CategoryModel($db);
 
     echo "<table class='table table-hover table-responsive table-bordered'>";
         echo "<tr>";
-            echo "<th>Product</th>";
-            echo "<th>Price</th>";
-            echo "<th>Description</th>";
-            echo "<th>Category</th>";
+            echo "<th>category</th>";
             echo "<th>Actions</th>";
         echo "</tr>";
 
@@ -24,8 +20,6 @@ if($num>0){
 
             echo "<tr>";
                 echo "<td>{$name}</td>";
-                echo "<td>{$price}</td>";
-                echo "<td>{$description}</td>";
                 echo "<td>";
                     $category->id = $category_id;
                     $category->readName();
@@ -47,9 +41,9 @@ echo "</td>";
     // paging buttons will be here
 }
 
-// tell the user there are no products
+// tell the user there are no categorys
 else{
-    echo "<div>No products found.</div>";
+    echo "<div>No categorys found.</div>";
 }
 
 ?>
@@ -64,7 +58,7 @@ $(document).on('click', '.delete-object', function(){
 
     if (q == true){
 
-        $.post('delete_product.php', {
+        $.post('category', {
             object_id: id
         }, function(data){
             location.reload();

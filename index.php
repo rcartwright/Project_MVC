@@ -9,8 +9,8 @@ require("models/product.php");
 require("models/category.php");
 
 //require the controller classes
-require("controllers/HomeController.php");
 require("controllers/ProductController.php");
+require("controllers/CategoryController.php");
 
 
 //create the controller and execute the action
