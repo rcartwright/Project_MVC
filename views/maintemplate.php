@@ -15,8 +15,8 @@ include_once 'layout/header.php';
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class=""><a href="<?php echo $_SERVER['HTTP_PATH_BASE']."/Product_mvc/Product/index" ?>">Home</a></li>
-        <li><a href="./create">Create</a></li>
+        <li class=""><a href="<?php echo $_SERVER['HTTP_PATH_BASE']."/Project_MVC/Product/index" ?>">Products</a></li>
+        <li><a href="<?php echo $_SERVER['HTTP_PATH_BASE']."/Project_MVC/Category/index" ?>">Categories</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

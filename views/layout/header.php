@@ -9,6 +9,6 @@
     <title><?php echo $page_title; ?></title>
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $_SERVER['HTTP_PATH_BASE']."/Product_mvc/views/assets/custom.css"?>">
+    <link rel="stylesheet" href="<?php echo $_SERVER['HTTP_PATH_BASE']."/Project_MVC/views/assets/custom.css"?>">
 
      </head>

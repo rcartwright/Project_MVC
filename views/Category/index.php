@@ -3,7 +3,13 @@
 $category = new CategoryModel($db);
 $stmt = $category->readAll();
 $num = $stmt->rowCount();
-
+?>
+<div class='page-header'>
+<h1>Categories List</h1>
+</div>
+<a href="create" class='btn btn-default'>Create Category</a>
+<p>&nbsp;</p>
+<?php
 // display the categorys if there are any
 if($num>0){
 
@@ -20,15 +26,10 @@ if($num>0){
 
             echo "<tr>";
                 echo "<td>{$name}</td>";
-                echo "<td>";
-                    $category->id = $category_id;
-                    $category->readName();
-                    echo $category->name;
-                echo "</td>";
+
 
 echo "<td>";
 
-    echo "<a href='edit/{$id}' class='btn btn-default left-margin'>Edit</a>";
     echo "<a delete-id='{$id}' class='btn btn-default delete-object'>Delete</a>";
 echo "</td>";
 

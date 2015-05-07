@@ -26,7 +26,9 @@ if($_POST){
 
 ?>
 
-
+<div class='page-header'>
+<h1>Create Product</h1>
+</div>
 
 <!-- HTML form for creating a category -->
 <form action='create' method='post'>
