@@ -17,6 +17,8 @@ if($num>0){
     echo "<table class='table table-hover table-responsive table-bordered'>";
         echo "<tr>";
             echo "<th>category</th>";
+            echo "<th>Created</th>";
+            echo "<th>Updated</th>";
             echo "<th>Actions</th>";
         echo "</tr>";
 
@@ -26,6 +28,8 @@ if($num>0){
 
             echo "<tr>";
             echo "<td>{$name}</td>";
+            echo "<td>{$created}</td>";
+            echo "<td>{$modified}</td>";
             echo "<td>";
             echo "<a href='edit/{$id}' class='btn btn-default left-margin'>Edit</a>";
             echo "<a delete-id='{$id}' class='btn btn-default delete-object'>Delete</a>";

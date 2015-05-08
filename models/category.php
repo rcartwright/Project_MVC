@@ -9,6 +9,7 @@ class CategoryModel extends BaseModel{
     // object properties
     public $id;
     public $name;
+    public $timestamp;
 
 
     public function __construct($db){
@@ -21,7 +22,7 @@ class CategoryModel extends BaseModel{
     function readAll(){
 
         //select all data
-        $query = "SELECT id, name FROM " . $this->table_name . " ORDER BY name";
+        $query = "SELECT id, name, created, modified FROM " . $this->table_name . " ORDER BY name";
         $stmt = $this->conn->prepare( $query );
         $stmt->execute();
 
@@ -89,10 +90,12 @@ function readOne(){
 
 function update(){
 
+    $this->getTimestamp();
+
     $query = "UPDATE
                 " . $this->table_name . "
             SET
-                name = :name
+                name = :name, modified = :modified
 
             WHERE
                 id = :id";
@@ -100,6 +103,7 @@ function update(){
     $stmt = $this->conn->prepare($query);
 
     $stmt->bindParam(':name', $this->name);
+    $stmt->bindParam(':modified', $this->timestamp);
     $stmt->bindParam(':id', $this->id);
 
 

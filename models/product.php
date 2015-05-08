@@ -101,6 +101,7 @@ function readOne(){
 }
 
 function update(){
+    $this->getTimestamp();
 
     $query = "UPDATE
                 " . $this->table_name . "
@@ -108,7 +109,8 @@ function update(){
                 name = :name,
                 price = :price,
                 description = :description,
-                category_id  = :category_id
+                category_id  = :category_id,
+                modified  = :modified
             WHERE
                 id = :id";
 
@@ -118,6 +120,8 @@ function update(){
     $stmt->bindParam(':price', $this->price);
     $stmt->bindParam(':description', $this->description);
     $stmt->bindParam(':category_id', $this->category_id);
+    $stmt->bindParam(':modified', $this->timestamp);
+
     $stmt->bindParam(':id', $this->id);
 
     // execute the query
