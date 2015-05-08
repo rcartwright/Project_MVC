@@ -25,14 +25,11 @@ if($num>0){
             extract($row);
 
             echo "<tr>";
-                echo "<td>{$name}</td>";
-
-
-echo "<td>";
-
-    echo "<a delete-id='{$id}' class='btn btn-default delete-object'>Delete</a>";
-echo "</td>";
-
+            echo "<td>{$name}</td>";
+            echo "<td>";
+            echo "<a href='edit/{$id}' class='btn btn-default left-margin'>Edit</a>";
+            echo "<a delete-id='{$id}' class='btn btn-default delete-object'>Delete</a>";
+            echo "</td>";
             echo "</tr>";
 
         }
@@ -48,27 +45,3 @@ else{
 }
 
 ?>
-
-
-
-<script>
-$(document).on('click', '.delete-object', function(){
-
-    var id = $(this).attr('delete-id');
-    var q = confirm("Are you sure?");
-
-    if (q == true){
-
-        $.post('category', {
-            object_id: id
-        }, function(data){
-            location.reload();
-        }).fail(function() {
-            alert('Unable to delete.');
-        });
-
-    }
-
-    return false;
-});
-</script>

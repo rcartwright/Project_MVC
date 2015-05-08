@@ -37,7 +37,7 @@ if($num>0){
                 echo "<td>{$price}</td>";
                 echo "<td>{$description}</td>";
                 echo "<td>{$created}</td>";
-                echo "<td>{$modified}</td>";
+                echo "<td>{$modified}</td>";;
                 echo "<td>";
                     $category->id = $category_id;
                     $category->readName();
@@ -47,7 +47,7 @@ if($num>0){
 echo "<td>";
 
     echo "<a href='edit/{$id}' class='btn btn-default left-margin'>Edit</a>";
-    echo "<a delete-id='{$id}' class='delete-object btn btn-default'>Delete</a>";
+    echo "<a delete-id='{$id}' class='btn btn-default delete-object'>Delete</a>";
 echo "</td>";
 
             echo "</tr>";
@@ -67,25 +67,3 @@ else{
 ?>
 
 
-
-<script>
-$(document).on('click', '.delete-object', function(){
-
-    var id = $(this).attr('delete-id');
-    var q = confirm("Are you sure?");
-
-    if (q == true){
-
-        $.post('./', {
-            object_id: id
-        }, function(data){
-            location.reload();
-        }).fail(function() {
-            alert('Unable to delete.');
-        });
-
-    }
-
-    return false;
-});
-</script>
