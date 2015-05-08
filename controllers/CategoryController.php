@@ -24,6 +24,20 @@ public function store()
 
 	}
 
+public function edit()
+	{
+
+	$this->ReturnView('edit', true);
+
+	}
+
+public function update()
+	{
+
+	$this->ReturnView('edit', true);
+
+	}
+
 
 public function delete()
 	{

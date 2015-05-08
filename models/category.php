@@ -11,7 +11,7 @@ class CategoryModel extends BaseModel{
     public $name;
 
 
-public function __construct($db){
+    public function __construct($db){
         $database = new BaseModel();
         $db = $database->getConnection();
         $this->conn = $db;
@@ -67,6 +67,50 @@ public function __construct($db){
 
     }
 
+function readOne(){
+
+    $query = "SELECT
+                name
+            FROM
+                " . $this->table_name . "
+            WHERE
+                id = ?
+            LIMIT
+                0,1";
+
+    $stmt = $this->conn->prepare( $query );
+    $stmt->bindParam(1, $this->id);
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $this->name = $row['name'];
+}
+
+function update(){
+
+    $query = "UPDATE
+                " . $this->table_name . "
+            SET
+                name = :name
+
+            WHERE
+                id = :id";
+
+    $stmt = $this->conn->prepare($query);
+
+    $stmt->bindParam(':name', $this->name);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 // delete the product
     function delete(){
@@ -83,10 +127,6 @@ public function __construct($db){
         }
     }
 
-    function getTimestamp(){
-    date_default_timezone_set('Asia/Manila');
-    $this->timestamp = date('m-d-Y H:i:s');
-}
 
 }
 
