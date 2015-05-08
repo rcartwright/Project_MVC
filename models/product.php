@@ -144,10 +144,5 @@ function delete(){
 }
 
 
-// used for the 'created' field when creating a product
-function getTimestamp(){
-    date_default_timezone_set('Asia/Manila');
-    $this->timestamp = date('m-d-Y H:i:s');
-}
 }
 ?>

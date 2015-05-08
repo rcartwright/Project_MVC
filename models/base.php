@@ -27,5 +27,10 @@ protected $viewModel;
             die;
         }
     }
+
+    function getTimestamp(){
+    date_default_timezone_set('US/Arizona');
+    $this->timestamp = date('Y-m-d H:i:s');
+}
 }
 ?>
