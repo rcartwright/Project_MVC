@@ -37,7 +37,7 @@ if($num>0){
                 echo "<td>{$price}</td>";
                 echo "<td>{$description}</td>";
                 echo "<td>{$created}</td>";
-                echo "<td>{$modified}</td>";;
+                echo "<td>{$modified}</td>";
                 echo "<td>";
                     $category->id = $category_id;
                     $category->readName();

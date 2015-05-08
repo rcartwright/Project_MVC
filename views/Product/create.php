@@ -53,11 +53,6 @@ if($_POST){
             <td><textarea name='description' class='form-control'></textarea></td>
         </tr>
 
-        <tr>
-            <td>Category</td>
-            <td>
-
-
 <tr>
     <td>Category</td>
     <td>
