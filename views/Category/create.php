@@ -1,4 +1,3 @@
-
 <?php // if the form was submitted
 if($_POST){
 
@@ -27,7 +26,7 @@ if($_POST){
 ?>
 
 <div class='page-header'>
-<h1>Create Product</h1>
+<h1>Create Category</h1>
 </div>
 
 <!-- HTML form for creating a category -->
@@ -39,12 +38,6 @@ if($_POST){
             <td>Name</td>
             <td><input type='text' name='name' class='form-control' required></td>
         </tr>
-
-
-
-            </td>
-        </tr>
-
         <tr>
             <td></td>
             <td>
