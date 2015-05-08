@@ -16,26 +16,6 @@ $category->readOne();
 
 ?>
 
-<form action='./<?php echo $id; ?>' method='post'>
-
-    <table class='table table-hover table-responsive table-bordered'>
-
-        <tr>
-            <td>Name</td>
-            <td><input type='text' name='name' value='<?php echo $category->name; ?>' class='form-control' required></td>
-        </tr>
-
-        <tr>
-            <td></td>
-            <td>
-                <button type="submit" class="btn btn-primary">Update</button>
-            </td>
-        </tr>
-
-    </table>
-</form>
-
-
 <?php
 // if the form was submitted
 if($_POST){
@@ -60,3 +40,22 @@ if($_POST){
     }
 }
 ?>
+
+<form action='./<?php echo $id; ?>' method='post'>
+
+    <table class='table table-hover table-responsive table-bordered'>
+
+        <tr>
+            <td>Name</td>
+            <td><input type='text' name='name' value='<?php echo $category->name; ?>' class='form-control' required></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
